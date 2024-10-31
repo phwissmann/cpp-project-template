@@ -1,0 +1,18 @@
+[requires]
+onetbb/2021.3.0
+
+[options]
+sol2/*:with_lua=lua
+onetbb/*:shared=True
+
+[tool_requires]
+cmake/3.28.1
+ninja/1.11.1
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[imports]
+lib, *.so* -> ./bin
+bin, *.so* -> ./bin

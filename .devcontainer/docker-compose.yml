@@ -1,0 +1,24 @@
+version: "3.3"
+services:
+  ubuntu22.04-dev:
+    container_name: ubuntu22.04-dev
+    hostname: ubuntu22.04
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      args:
+        - CMAKE_VERSION=3.28.1
+        - USERNAME=dev
+        - CONAN_VERSION=2.1.0
+    volumes:
+      - ../:/workspace:cached
+      # Overrides default command so things don't shut down after the process ends.
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    cap_add:
+      - SYS_PTRACE
+    environment:
+      - CCACHE_DIR=/workspace/.ccache
+    security_opt:
+      - seccomp:unconfined
+    tty: true
+    working_dir: /workspace
