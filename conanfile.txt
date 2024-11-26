@@ -1,0 +1,17 @@
+[requires]
+onetbb/2021.3.0
+
+[options]
+onetbb/*:shared=True
+
+[tool_requires]
+cmake/3.28.1
+ninja/1.11.1
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[imports]
+lib, *.so* -> ./bin
+bin, *.so* -> ./bin
