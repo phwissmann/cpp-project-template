@@ -1,0 +1,58 @@
+---
+Checks: "
+        -clang-*,
+        bugprone-*,
+        # -bugprone-easily-swappable-parameters,
+        # -bugprone-narrowing-conversions,
+        # -bugprone-reserved-identifier,
+        # -bugprone-exception-escape,
+        # -bugprone-implicit-widening-of-multiplication-result, 
+        # -bugprone-branch-clone,
+        -abseil-*,
+        -altera-*,
+        -android-*,
+        -fuchsia-*,
+        -google-*,
+        -llvm*,
+        -zircon-*,
+        modernize-*,
+        modernize-avoid-c-arrays,
+        -modernize-use-trailing-return-type,
+        readability-*,
+        -readability-else-after-return,
+        -readability-static-accessed-through-instance,
+        -readability-else-after-return,
+        -readability-avoid-const-params-in-decls,
+        -readability-identifier-length,
+        -readability-magic-numbers,
+        -readability-function-cognitive-complexity,
+        -readability-uppercase-literal-suffix,
+        -readability-identifier-naming,
+        -readability-redundant-declaration,
+        -readability-avoid-nested-conditional-operator,
+        cppcoreguidelines-init-variables,
+        cppcoreguidelines-prefer-member-initializer,
+        cppcoreguidelines-pro-type-member-init,
+        cppcoreguidelines-pro-type-static-cast-downcast,
+        cppcoreguidelines-virtual-class-destructor,
+        misc-*,
+        misc-const-correctness,
+        -misc-include-cleaner,
+        -misc-confusable-identifiers,
+        -misc-no-recursion,
+        -misc-non-private-member-variables-in-classes,
+        -misc-use-anonymous-namespace,
+        -misc-header-include-cycle,
+        -hicpp-named-parameter,
+        -cert-msc32-c,
+        -cert-msc51-cpp
+        "
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*/src/.*'
+FormatStyle: 'file'
+
+CheckOptions:
+  - key: readability-identifier-length.IgnoredVariableNames
+    value: 'x|y|z'
+  - key: readability-identifier-length.IgnoredParameterNames
+    value: 'x|y|z'
