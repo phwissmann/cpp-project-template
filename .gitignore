@@ -32,7 +32,15 @@
 *.app
 
 
+# Conan packages
 .conan/*
+
+# Compiler cache
 .ccache/*
+
+# Clang tidy cache
+.ctcache/*
+
+# build folders
 build/*
 build_*/*
